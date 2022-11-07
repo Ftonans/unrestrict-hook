@@ -3,4 +3,7 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit
 fi
 chmod -v 644 grub.hook
-cp -ip grub.hook /etc/pacman.d/hooks/
+cp -ip grub.hook /etc/pacman.d/hooks/ &&
+directory=$(pwd)
+rm -rfv $directory
+echo "Done"
